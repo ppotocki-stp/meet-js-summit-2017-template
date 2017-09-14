@@ -2,24 +2,16 @@ const task = require('./task');
 
 describe('Task', () => {
 
-  it('Should return properly sorted array of numbers', () => {
-    const testArray= [20, 35, 40, 45];
-    const sortedArray = [20, 35, 40, 45];
+  it('Should return object with original array and reversed', () => {
+    const testArray = [1, "2", 3, "a"];
+    const expectedResult = {
+      originalArray: [1, "2", 3, "a"],
+      reversedArray: ["a", 3, "2", 1]
+    };
     const result = task(testArray);
-    expect(result).toEqual(sortedArray);
+
+    expect(result).toEqual(expectedResult);
+
   });
 
-  it('Should return properly sorted array of numbers', () => {
-    const testArray = [20, 15, 10, 2];
-    const sortedArray = [2, 10, 15, 20];
-    const result = task(testArray);
-    expect(result).toEqual(sortedArray);
-  });
-
-  it('Should return properly sorted array of numbers as strings', () => {
-    const testArray = ['-15', '-10', '-20', '-2'];
-    const sortedArray = ['-20', '-15', '-10', '-2'];
-    const result = task(testArray);
-    expect(result).toEqual(sortedArray);
-  });
 });
